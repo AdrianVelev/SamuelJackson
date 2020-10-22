@@ -80,6 +80,7 @@ p {
 	top: 0;
 	width: 100vw;
 	height: auto;
+	z-index: 10;
 }
 #header .header {
 	min-height: 8vh;
@@ -98,7 +99,7 @@ p {
 #header .nav-list ul {
 	list-style: none;
 	position: absolute;
-	background-color: rgb(31, 30, 30);
+	background-color: rgb(20, 20, 20);
 	width: 100vw;
 	height: 100vh;
 	left: 100%;
@@ -185,18 +186,8 @@ p {
 	transition: .3s ease;
 	transition-property: top, bottom;
 }
-#header .hamburger .bar::after {
-	top: 8px;
-}
-#header .hamburger .bar::before {
-	bottom: 8px;
-}
-#header .hamburger.active .bar::before {
-	bottom: 0;
-}
-#header .hamburger.active .bar::after {
-	top: 0;
-}
+
+
 /* End Header section */
 
 /* Hero Section */
@@ -715,57 +706,44 @@ p {
 }
 /* End Bio Section */
 
-/* contact Section */
-#contact .contact {
+/* Photos Section */
+#photos .photos {
 	flex-direction: column;
 	max-width: 1200px;
 	margin: 0 auto;
 }
-#contact .contact-items {
+#photos .photos-items {
 	width: 400px;
 }
-#contact .contact-item {
+#photos .photos-item {
 	width: 80%;
-	padding: 20px;
+	margin: 2%;
 	text-align: center;
 	border-radius: 10px;
-	padding: 30px;
-	margin: 30px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	box-shadow: 0px 0px 18px 0 #0000002c;
+
+}
+#photos .photos-item:hover {
+	border: solid 2px #22A7F0;
+	box-shadow: 0px 0px 18px 0 #22A7F0;
 	transition: .3s ease box-shadow;
 }
-#contact .contact-item:hover {
-	box-shadow: 0px 0px 5px 0 #0000002c;
-}
-#contact .icon {
-	width: 70px;
-	margin: 0 auto;
-	margin-bottom: 10px;
-}
-#contact .contact-info h1 {
-	font-size: 2.5rem;
-	font-weight: 500;
-	margin-bottom: 5px;
-}
-#contact .contact-info h2 {
-	font-size: 1.3rem;
-	line-height: 2rem;
-	font-weight: 500;
-}
-/*End contact Section */
+  
+
+
+/*End Photos Section */
 
 /* Footer */
 #footer {
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	background-color: rgb(20, 20, 20);
 }
 #footer .footer {
-	min-height: 200px;
+	min-height: 100px;
 	flex-direction: column;
-	padding-top: 50px;
+	padding-top: 10px;
 	padding-bottom: 10px;
 }
 #footer h2 {
@@ -776,26 +754,7 @@ p {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
-#footer .social-icon {
-	display: flex;
-	margin-bottom: 30px;
-}
-#footer .social-item {
-	height: 50px;
-	width: 50px;
-	margin: 0 5px;
-}
-#footer .social-item img {
-	filter: grayscale(1);
-	transition: .3s ease filter;
-}
-#footer .social-item:hover img {
-	filter: grayscale(0);
-}
-#footer p {
-	color: white;
-	font-size: 1.3rem;
-}
+
 /* End Footer */
 
 /* Keyframes */
@@ -914,6 +873,773 @@ p {
 	#movies .all-movies .movies-img {
 		height: 100%;
 	}
+
+	#movies .movies-item .close{
+		position: absolute;
+		top: 30px;
+		right: 30px;
+		cursor: pointer;
+		max-width: 32px;
+		max-height: 32px;
+		z-index: 99999999999999999;
+	}
+
+	#movies .movies-info .movies-trailer-btn a{
+
+		position: relative;
+		text-transform: uppercase;
+		background: none;
+		color: #FFF;
+		font-size: 2rem;
+		border: 3px solid #22A7F0;
+		font-weight: 750;
+		letter-spacing: 2px;
+		text-decoration: none;
+		display: inline-block;
+		margin-top:20px;
+		padding: 10px 45px;
+	}
+	
+	#movies .movies-item .trailer{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 5;	
+		position: absolute;
+		align-items: flex-start;
+		justify-items: left;
+		margin-right: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+
+	#movies .movies-item .trailer video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	
+	#movies .movies-item .trailer1{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 4;	
+		position: absolute;
+		align-items: flex-end;
+		justify-items: right;
+		margin-left: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer1.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+	#movies .movies-item .trailer1 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+
+	#movies .movies-item .trailer2{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 5;	
+		position: absolute;
+		align-items: flex-start;
+		justify-items: left;
+		margin-right: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer2.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+
+	#movies .movies-item .trailer2 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer3{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 4;	
+		position: absolute;
+		align-items: flex-end;
+		justify-items: right;
+		margin-left: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer3.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+	#movies .movies-item .trailer3 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer4{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 5;	
+		position: absolute;
+		align-items: flex-start;
+		justify-items: left;
+		margin-right: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer4.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+
+	#movies .movies-item .trailer4 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer5{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 4;	
+		position: absolute;
+		align-items: flex-end;
+		justify-items: right;
+		margin-left: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer5.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+	#movies .movies-item .trailer5 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer6{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 5;	
+		position: absolute;
+		align-items: flex-start;
+		justify-items: left;
+		margin-right: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer6.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+
+	#movies .movies-item .trailer6 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer7{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 4;	
+		position: absolute;
+		align-items: flex-end;
+		justify-items: right;
+		margin-left: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer7.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+	#movies .movies-item .trailer7 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	}
+	#movies .movies-item .trailer8{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 5;	
+		position: absolute;
+		align-items: flex-start;
+		justify-items: left;
+		margin-right: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer8.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+
+	#movies .movies-item .trailer8 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer9{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 4;	
+		position: absolute;
+		align-items: flex-end;
+		justify-items: right;
+		margin-left: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer9.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+	#movies .movies-item .trailer9 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	}
+	#movies .movies-item .trailer10{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 5;	
+		position: absolute;
+		align-items: flex-start;
+		justify-items: left;
+		margin-right: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer10.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+
+	#movies .movies-item .trailer10 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer11{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 4;	
+		position: absolute;
+		align-items: flex-end;
+		justify-items: right;
+		margin-left: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer11.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+	#movies .movies-item .trailer11 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+
+	#movies .movies-item .trailer12{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 5;	
+		position: absolute;
+		align-items: flex-start;
+		justify-items: left;
+		margin-right: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer12.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+
+	#movies .movies-item .trailer12 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer13{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 4;	
+		position: absolute;
+		align-items: flex-end;
+		justify-items: right;
+		margin-left: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer13.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+	#movies .movies-item .trailer13 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer14{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 5;	
+		position: absolute;
+		align-items: flex-start;
+		justify-items: left;
+		margin-right: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer14.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+
+	#movies .movies-item .trailer14 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer15{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 4;	
+		position: absolute;
+		align-items: flex-end;
+		justify-items: right;
+		margin-left: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer15.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+	#movies .movies-item .trailer15 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer16{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 5;	
+		position: absolute;
+		align-items: flex-start;
+		justify-items: left;
+		margin-right: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer16.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+
+	#movies .movies-item .trailer16 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer17{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 4;	
+		position: absolute;
+		align-items: flex-end;
+		justify-items: right;
+		margin-left: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer17.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+	#movies .movies-item .trailer17 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	}
+	#movies .movies-item .trailer18{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 5;	
+		position: absolute;
+		align-items: flex-start;
+		justify-items: left;
+		margin-right: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer18.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+
+	#movies .movies-item .trailer18 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer19{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 4;	
+		position: absolute;
+		align-items: flex-end;
+		justify-items: right;
+		margin-left: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer19.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+	#movies .movies-item .trailer19 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	}
+	#movies .movies-item .trailer20{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 5;	
+		position: absolute;
+		align-items: flex-start;
+		justify-items: left;
+		margin-right: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer20.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+
+	#movies .movies-item .trailer20 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer21{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 4;	
+		position: absolute;
+		align-items: flex-end;
+		justify-items: right;
+		margin-left: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer21.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+	#movies .movies-item .trailer21 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+
+	#movies .movies-item .trailer22{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 5;	
+		position: absolute;
+		align-items: flex-start;
+		justify-items: left;
+		margin-right: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer22.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+
+	#movies .movies-item .trailer22 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer23{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 4;	
+		position: absolute;
+		align-items: flex-end;
+		justify-items: right;
+		margin-left: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer23.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+	#movies .movies-item .trailer23 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer24{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 5;	
+		position: absolute;
+		align-items: flex-start;
+		justify-items: left;
+		margin-right: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer24.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+
+	#movies .movies-item .trailer24 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer25{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 4;	
+		position: absolute;
+		align-items: flex-end;
+		justify-items: right;
+		margin-left: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer25.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+	#movies .movies-item .trailer25 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer26{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 5;	
+		position: absolute;
+		align-items: flex-start;
+		justify-items: left;
+		margin-right: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer26.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+
+	#movies .movies-item .trailer26 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+	#movies .movies-item .trailer27{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 4;	
+		position: absolute;
+		align-items: flex-end;
+		justify-items: right;
+		margin-left: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer27.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+	#movies .movies-item .trailer27 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	}
+	#movies .movies-item .trailer28{
+		background: black;
+		height: auto;
+		flex-basis: 50%;
+		flex-direction: column;
+		z-index: 5;	
+		position: absolute;
+		align-items: flex-start;
+		justify-items: left;
+		margin-right: 600px;
+		visibility: hidden;
+		opacity: 0;
+	}
+	
+	#movies .movies-item .trailer28.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	
+
+	#movies .movies-item .trailer28 video{
+		width: 600px;
+		height: 400px;
+		outline: none;
+	
+	}
+
 	/* End Movies */
 
 	/* Bio */
@@ -941,39 +1667,680 @@ p {
 	}
 	/* End Bio */
 
-	/* contact  */
-	#contact .contact {
+	/* photos  */
+	#photos .photost {
 		flex-direction: column;
-		padding: 100px 0;
 		align-items: center;
 		justify-content: center;
-		min-width: 20vh;
 	}
-	#contact .contact-items {
+
+	#photos .photos img.active {
+		opacity: 1;
+		width: 1200px;
+		height: 1200px;
+	}
+	#photos .photos img:hover {
+		opacity: 1;
+		transition: 1s;
+		border-radius: 10px;
+		cursor: pointer;
+		
+	}
+	#photos .photos-items {
 		width: 100%;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-evenly;
 		margin: 0;
 	}
-	#contact .contact-item {
-		width: 30%;
-		margin: 0;
+
+	#photos .photos-item {
+		background-image: linear-gradient(60deg, #141414 0%, #004970 100%);
+		margin: 10px;
 		flex-direction: row;
 	}
-	#contact .contact-item .icon {
-		height: 100px;
-		width: 100px;
+
+	#image1 {
+		opacity: 0.5;
+		border-radius: 10px;
+		
 	}
-	#contact .contact-item .icon img {
-		object-fit: contain;
+  
+  /* The Modal (background) */
+  #photos .photos-item .modal1 {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 14; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	box-shadow: 0px 0px 18px 0 #22A7F0;
+  }
+  
+  /* Modal Content (image) */
+  #photos .photos-item .modal-content1 {
+	margin: auto;
+	display: block;
+	width: auto;
+	height: 90%;
+	max-width: 700px;
+	z-index: 15;
+	box-shadow: 0px 0px 250px 0 #00497098;
+  }
+  
+  
+  /* Add Animation */
+  #photos .photos-item .modal-content1 {  
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+  }
+  
+  @-webkit-keyframes zoom {
+	from {-webkit-transform:scale(0)} 
+	to {-webkit-transform:scale(1)}
+  }
+  
+  @keyframes zoom {
+	from {transform:scale(0)} 
+	to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  #photos .photos-item .close1 {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #fff;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+	z-index: 15;
+  }
+  
+  #photos .photos-item .close1:hover,
+  #photos .photos-item .close1:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+	z-index: 15;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+	#photos .photos-item 	.modal-content1 {
+	  width: 100%;
 	}
-	#contact .contact-item .contact-info {
-		width: 100%;
-		text-align: left;
-		padding-left: 20px;
+  }
+
+  /* ----------------------BOKLUK SPRI------------------------- */
+
+	#image2 {
+		opacity: 0.5;
+		border-radius: 10px;
+		
 	}
-	/* End contact  */
+  
+  /* The Modal (background) */
+  #photos .photos-item .modal2 {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 14; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	box-shadow: 0px 0px 18px 0 #22A7F0;
+  }
+  
+  /* Modal Content (image) */
+  #photos .photos-item .modal-content2 {
+	margin: auto;
+	display: block;
+	width: auto;
+	height: 90%;
+	max-width: 700px;
+	z-index: 15;
+	box-shadow: 0px 0px 250px 0 #00497098;
+  }
+  
+  
+  /* Add Animation */
+  #photos .photos-item .modal-content2 {  
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+  }
+  
+  @-webkit-keyframes zoom {
+	from {-webkit-transform:scale(0)} 
+	to {-webkit-transform:scale(1)}
+  }
+  
+  @keyframes zoom {
+	from {transform:scale(0)} 
+	to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  #photos .photos-item .close2 {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #fff;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+	z-index: 15;
+  }
+  
+  #photos .photos-item .close2:hover,
+  #photos .photos-item .close2:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+	z-index: 15;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+	#photos .photos-item 	.modal-content2 {
+	  width: 100%;
+	}
+  }
+  /* ----------------------BOKLUK SPRI------------------------- */
+
+	#image3 {
+		opacity: 0.5;
+		border-radius: 10px;
+		
+	}
+  
+  /* The Modal (background) */
+  #photos .photos-item .modal3 {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 14; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	box-shadow: 0px 0px 18px 0 #22A7F0;
+  }
+  
+  /* Modal Content (image) */
+  #photos .photos-item .modal-content3 {
+	margin: auto;
+	display: block;
+	width: auto;
+	height: 90%;
+	max-width: 700px;
+	z-index: 15;
+	box-shadow: 0px 0px 250px 0 #00497098;
+  }
+  
+  
+  /* Add Animation */
+  #photos .photos-item .modal-content3 {  
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+  }
+  
+  @-webkit-keyframes zoom {
+	from {-webkit-transform:scale(0)} 
+	to {-webkit-transform:scale(1)}
+  }
+  
+  @keyframes zoom {
+	from {transform:scale(0)} 
+	to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  #photos .photos-item .close3 {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #fff;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+	z-index: 15;
+  }
+  
+  #photos .photos-item .close3:hover,
+  #photos .photos-item .close3:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+	z-index: 15;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+	#photos .photos-item 	.modal-content3 {
+	  width: 100%;
+	}
+  }
+  /* ----------------------BOKLUK SPRI------------------------- */
+
+	#image4 {
+		opacity: 0.5;
+		border-radius: 10px;
+		
+	}
+  
+  /* The Modal (background) */
+  #photos .photos-item .modal4 {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 14; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	box-shadow: 0px 0px 18px 0 #22A7F0;
+  }
+  
+  /* Modal Content (image) */
+  #photos .photos-item .modal-content4 {
+	margin: auto;
+	display: block;
+	width: auto;
+	height: 90%;
+	max-width: 700px;
+	z-index: 15;
+	box-shadow: 0px 0px 250px 0 #00497098;
+  }
+  
+  
+  /* Add Animation */
+  #photos .photos-item .modal-content4 {  
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+  }
+  
+  @-webkit-keyframes zoom {
+	from {-webkit-transform:scale(0)} 
+	to {-webkit-transform:scale(1)}
+  }
+  
+  @keyframes zoom {
+	from {transform:scale(0)} 
+	to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  #photos .photos-item .close4 {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #fff;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+	z-index: 15;
+  }
+  
+  #photos .photos-item .close4:hover,
+  #photos .photos-item .close4:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+	z-index: 15;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+	#photos .photos-item 	.modal-content4 {
+	  width: 100%;
+	}
+  }
+  /* ----------------------BOKLUK SPRI------------------------- */
+
+	#image5 {
+		opacity: 0.5;
+		border-radius: 10px;
+		
+	}
+  
+  /* The Modal (background) */
+  #photos .photos-item .modal5 {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 14; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	box-shadow: 0px 0px 18px 0 #22A7F0;
+  }
+  
+  /* Modal Content (image) */
+  #photos .photos-item .modal-content5 {
+	margin: auto;
+	display: block;
+	width: auto;
+	height: 90%;
+	max-width: 700px;
+	z-index: 15;
+	box-shadow: 0px 0px 250px 0 #00497098;
+  }
+  
+  
+  /* Add Animation */
+  #photos .photos-item .modal-content5 {  
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+  }
+  
+  @-webkit-keyframes zoom {
+	from {-webkit-transform:scale(0)} 
+	to {-webkit-transform:scale(1)}
+  }
+  
+  @keyframes zoom {
+	from {transform:scale(0)} 
+	to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  #photos .photos-item .close5 {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #fff;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+	z-index: 15;
+  }
+  
+  #photos .photos-item .close5:hover,
+  #photos .photos-item .close5:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+	z-index: 15;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+	#photos .photos-item 	.modal-content5 {
+	  width: 100%;
+	}
+  }
+  /* ----------------------BOKLUK SPRI------------------------- */
+
+	#image6 {
+		opacity: 0.5;
+		border-radius: 10px;
+		
+	}
+  
+  /* The Modal (background) */
+  #photos .photos-item .modal6 {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 14; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	box-shadow: 0px 0px 18px 0 #22A7F0;
+  }
+  
+  /* Modal Content (image) */
+  #photos .photos-item .modal-content6 {
+	margin: auto;
+	display: block;
+	width: auto;
+	height: 90%;
+	max-width: 700px;
+	z-index: 15;
+	box-shadow: 0px 0px 250px 0 #00497098;
+  }
+  
+  
+  /* Add Animation */
+  #photos .photos-item .modal-content6 {  
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+  }
+  
+  @-webkit-keyframes zoom {
+	from {-webkit-transform:scale(0)} 
+	to {-webkit-transform:scale(1)}
+  }
+  
+  @keyframes zoom {
+	from {transform:scale(0)} 
+	to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  #photos .photos-item .close6 {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #fff;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+	z-index: 15;
+  }
+  
+  #photos .photos-item .close6:hover,
+  #photos .photos-item .close6:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+	z-index: 15;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+	#photos .photos-item 	.modal-content6 {
+	  width: 100%;
+	}
+  }
+  /* ----------------------BOKLUK SPRI------------------------- */
+
+	#image7 {
+		opacity: 0.5;
+		border-radius: 10px;
+		
+	}
+  
+  /* The Modal (background) */
+  #photos .photos-item .modal7 {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 14; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	box-shadow: 0px 0px 18px 0 #22A7F0;
+  }
+  
+  /* Modal Content (image) */
+  #photos .photos-item .modal-content7 {
+	margin: auto;
+	display: block;
+	width: auto;
+	height: 90%;
+	max-width: 700px;
+	z-index: 15;
+	box-shadow: 0px 0px 250px 0 #00497098;
+  }
+  
+  
+  /* Add Animation */
+  #photos .photos-item .modal-content7 {  
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+  }
+  
+  @-webkit-keyframes zoom {
+	from {-webkit-transform:scale(0)} 
+	to {-webkit-transform:scale(1)}
+  }
+  
+  @keyframes zoom {
+	from {transform:scale(0)} 
+	to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  #photos .photos-item .close7 {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #fff;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+	z-index: 15;
+  }
+  
+  #photos .photos-item .close7:hover,
+  #photos .photos-item .close7:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+	z-index: 15;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+	#photos .photos-item 	.modal-content7 {
+	  width: 100%;
+	}
+  }
+  /* ----------------------BOKLUK SPRI------------------------- */
+
+	#image8 {
+		opacity: 0.5;
+		border-radius: 10px;
+		
+	}
+  
+  /* The Modal (background) */
+  #photos .photos-item .modal8 {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 14; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	box-shadow: 0px 0px 18px 0 #22A7F0;
+  }
+  
+  /* Modal Content (image) */
+  #photos .photos-item .modal-content8 {
+	margin: auto;
+	display: block;
+	width: auto;
+	height: 90%;
+	max-width: 700px;
+	z-index: 15;
+	box-shadow: 0px 0px 250px 0 #00497098;
+  }
+  
+  
+  /* Add Animation */
+  #photos .photos-item .modal-content8 {  
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+  }
+  
+  @-webkit-keyframes zoom {
+	from {-webkit-transform:scale(0)} 
+	to {-webkit-transform:scale(1)}
+  }
+  
+  @keyframes zoom {
+	from {transform:scale(0)} 
+	to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  #photos .photos-item .close8 {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #fff;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+	z-index: 15;
+  }
+  
+  #photos .photos-item .close8:hover,
+  #photos .photos-item .close8:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+	z-index: 15;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+	#photos .photos-item 	.modal-content8 {
+	  width: 100%;
+	}
+  }
+
+	/* End photos  */
 }
 /* End Media Query For Tablet */
 
