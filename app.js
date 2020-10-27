@@ -41,10 +41,11 @@ function toggle1(){
 }
 function toggle2(){
 	var trailer2= document.querySelector('.trailer2')
-	var video= document.querySelector('video')
+	var iframe= document.querySelector('iframe')
 	trailer2.classList.toggle('active');
 	video.pause();
 	video.currentTime = 0;
+	
 }
 function toggle3(){
 	var trailer3= document.querySelector('.trailer3')

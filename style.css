@@ -212,16 +212,16 @@ p {
 #home .hero {
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 0 40px;
+	padding: 0 10px;
 	justify-content: flex-start;
 }
 #home h1 {
 	
 	display: block;
 	width: fit-content;
-	font-size: 10rem;
+	font-size: 100px;
 	position: relative;
-	margin-top: 60vh;
+	margin-top: 600px;
 	margin-left: auto;
 	margin-right: auto;
 	justify-content: center;
@@ -257,6 +257,35 @@ p {
 }
 
 /* End Hero Section */
+
+/* Music Player Section */
+
+.container-audio {
+	margin-top: 25px;
+	margin-left: 320px;
+    width: 312px;
+    height: 65px;
+	padding: 5px;
+	border-radius: 5px;
+	border-color: #22A7F0;
+    /*background-color: #141414;*/
+	overflow: hidden;
+	position: fixed;
+	/*z-index: 13;*/
+	/*opacity: 0.7;*/
+}
+
+audio {
+    height: 30px;
+}
+
+audio::-webkit-media-controls-panel, video::-webkit-media-controls-panel {
+	background-color:#22A7F0;
+}
+
+
+
+/* End Music Player Section */
 
 /* facts Section */
 #facts .facts {
@@ -920,12 +949,7 @@ p {
 	}
 	
 
-	#movies .movies-item .trailer video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 	
 	#movies .movies-item .trailer1{
 		background: black;
@@ -946,13 +970,6 @@ p {
 		opacity: 1;
 	}
 	
-	#movies .movies-item .trailer1 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
-
 	#movies .movies-item .trailer2{
 		background: black;
 		height: auto;
@@ -973,12 +990,6 @@ p {
 	}
 	
 
-	#movies .movies-item .trailer2 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
 	#movies .movies-item .trailer3{
 		background: black;
 		height: auto;
@@ -998,12 +1009,6 @@ p {
 		opacity: 1;
 	}
 	
-	#movies .movies-item .trailer3 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
 	#movies .movies-item .trailer4{
 		background: black;
 		height: auto;
@@ -1024,12 +1029,7 @@ p {
 	}
 	
 
-	#movies .movies-item .trailer4 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 	#movies .movies-item .trailer5{
 		background: black;
 		height: auto;
@@ -1049,12 +1049,7 @@ p {
 		opacity: 1;
 	}
 	
-	#movies .movies-item .trailer5 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 	#movies .movies-item .trailer6{
 		background: black;
 		height: auto;
@@ -1075,12 +1070,7 @@ p {
 	}
 	
 
-	#movies .movies-item .trailer6 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 	#movies .movies-item .trailer7{
 		background: black;
 		height: auto;
@@ -1100,11 +1090,7 @@ p {
 		opacity: 1;
 	}
 	
-	#movies .movies-item .trailer7 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	}
+
 	#movies .movies-item .trailer8{
 		background: black;
 		height: auto;
@@ -1125,12 +1111,7 @@ p {
 	}
 	
 
-	#movies .movies-item .trailer8 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 	#movies .movies-item .trailer9{
 		background: black;
 		height: auto;
@@ -1150,11 +1131,7 @@ p {
 		opacity: 1;
 	}
 	
-	#movies .movies-item .trailer9 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	}
+
 	#movies .movies-item .trailer10{
 		background: black;
 		height: auto;
@@ -1175,12 +1152,7 @@ p {
 	}
 	
 
-	#movies .movies-item .trailer10 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 	#movies .movies-item .trailer11{
 		background: black;
 		height: auto;
@@ -1200,12 +1172,7 @@ p {
 		opacity: 1;
 	}
 	
-	#movies .movies-item .trailer11 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 
 	#movies .movies-item .trailer12{
 		background: black;
@@ -1227,12 +1194,7 @@ p {
 	}
 	
 
-	#movies .movies-item .trailer12 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 	#movies .movies-item .trailer13{
 		background: black;
 		height: auto;
@@ -1252,12 +1214,7 @@ p {
 		opacity: 1;
 	}
 	
-	#movies .movies-item .trailer13 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 	#movies .movies-item .trailer14{
 		background: black;
 		height: auto;
@@ -1278,12 +1235,7 @@ p {
 	}
 	
 
-	#movies .movies-item .trailer14 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 	#movies .movies-item .trailer15{
 		background: black;
 		height: auto;
@@ -1303,12 +1255,7 @@ p {
 		opacity: 1;
 	}
 	
-	#movies .movies-item .trailer15 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 	#movies .movies-item .trailer16{
 		background: black;
 		height: auto;
@@ -1329,12 +1276,7 @@ p {
 	}
 	
 
-	#movies .movies-item .trailer16 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 	#movies .movies-item .trailer17{
 		background: black;
 		height: auto;
@@ -1354,11 +1296,7 @@ p {
 		opacity: 1;
 	}
 	
-	#movies .movies-item .trailer17 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	}
+
 	#movies .movies-item .trailer18{
 		background: black;
 		height: auto;
@@ -1379,12 +1317,7 @@ p {
 	}
 	
 
-	#movies .movies-item .trailer18 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 	#movies .movies-item .trailer19{
 		background: black;
 		height: auto;
@@ -1404,11 +1337,7 @@ p {
 		opacity: 1;
 	}
 	
-	#movies .movies-item .trailer19 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	}
+
 	#movies .movies-item .trailer20{
 		background: black;
 		height: auto;
@@ -1429,12 +1358,7 @@ p {
 	}
 	
 
-	#movies .movies-item .trailer20 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 	#movies .movies-item .trailer21{
 		background: black;
 		height: auto;
@@ -1454,12 +1378,7 @@ p {
 		opacity: 1;
 	}
 	
-	#movies .movies-item .trailer21 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 
 	#movies .movies-item .trailer22{
 		background: black;
@@ -1481,12 +1400,7 @@ p {
 	}
 	
 
-	#movies .movies-item .trailer22 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 	#movies .movies-item .trailer23{
 		background: black;
 		height: auto;
@@ -1506,12 +1420,7 @@ p {
 		opacity: 1;
 	}
 	
-	#movies .movies-item .trailer23 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 	#movies .movies-item .trailer24{
 		background: black;
 		height: auto;
@@ -1532,12 +1441,7 @@ p {
 	}
 	
 
-	#movies .movies-item .trailer24 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 	#movies .movies-item .trailer25{
 		background: black;
 		height: auto;
@@ -1557,12 +1461,7 @@ p {
 		opacity: 1;
 	}
 	
-	#movies .movies-item .trailer25 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 	#movies .movies-item .trailer26{
 		background: black;
 		height: auto;
@@ -1583,12 +1482,7 @@ p {
 	}
 	
 
-	#movies .movies-item .trailer26 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
+
 	#movies .movies-item .trailer27{
 		background: black;
 		height: auto;
@@ -1608,11 +1502,7 @@ p {
 		opacity: 1;
 	}
 	
-	#movies .movies-item .trailer27 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	}
+
 	#movies .movies-item .trailer28{
 		background: black;
 		height: auto;
@@ -1633,12 +1523,6 @@ p {
 	}
 	
 
-	#movies .movies-item .trailer28 video{
-		width: 600px;
-		height: 400px;
-		outline: none;
-	
-	}
 
 	/* End Movies */
 
